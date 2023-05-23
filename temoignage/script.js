@@ -197,7 +197,7 @@ var listAudio = [{
     },
     {
         name: "Ils trouveront leur voix ",
-        file: "../audio/ils-trouveront-tous-leur-voix.mp4",
+        file: "./audio/ils-trouveront-tous-leur-voix.mp4",
         duration: "00:06"
     },
     {
