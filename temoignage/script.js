@@ -192,7 +192,7 @@ function createTrackItem(index, name, duration) {
 
 var listAudio = [{
         name: "Après le collège ULIS",
-        file: "audio/collègeULIS.mp4",
+        file: "../audio/collègeULIS.mp4",
         duration: "00:12"
     },
     {
