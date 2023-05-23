@@ -63,8 +63,8 @@ function onCardClick(card, i) {
     } else if (i === 2) {
         openContentText.innerHTML = '<h1>' + card.children[2].textContent + '</h1>' + "Pendant tout ce mois d’octobre, nos apprentis du campus de Châteauroux se sont mobilisés dans le cadre d’octobre rose. Journée “tous en rose”, participation à une course caritative et une vente de gâteaux au profit de l’association “l’envolée rose”.";
     } else if (i === 3) {
-        openContentText.innerHTML = '<h1>' + card.children[2].textContent + '</h1>' + "Cet évènement vise à favoriser les rencontres, le dialogue, le partage entre des personnes en situation de handicap, des professionnels, des acteurs associatifs ou de la société civile, des chercheurs, des étudiants. Chaque édition vise ainsi à formuler des recommandations qui seront travaillées au cours de la semaine.";
-    } else if (i === 4) {
+        openContentText.innerHTML = '<h1>' + card.children[2].textContent + '</h1>' + "Cet événement, en collaboration entre le projet Handia & TousCap', avait pour but de sensibiliser les invités à travers une partie de cécifoot et de promouvoir leur projet, ainsi que d'inaugurer le site internet.";
+    } else if (i === 4) { 
         openContentText.innerHTML = '<h1>' + card.children[2].textContent + '</h1>' + "Samedi 10 juin 2023 : Cette nuit ayant deja eu lieu en 2021 a été réitérer cette année. Cette journée a pour but de valoriser les personnes en situation de handicap, à travers la tenue d’événements festifs ouverts à tous.Elle est mise en place a travezrs une grande soirée festive et conviviale organisée sur les places publiques de villes de France";
     } else if (i === 5) {
         openContentText.innerHTML = '<h1>' + card.children[2].textContent + '</h1>' + "Dimanche 3 décembre 2023 : Célébrée chaque année depuis 1992 à l’initiative de l’Organisation des Nations-Unies (ONU). Cette journée a pour but de : sensibiliser l'opignon publique, aire connaître et valoriser les actions de proximité conduites au quotidien par les associations et la communauté éducative et mieux faire connaître la question du handicap.";
