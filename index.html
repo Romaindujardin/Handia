@@ -1,0 +1,715 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" type="image/png" href="img/logoici.png">
+
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css?5713">
+    <link rel="stylesheet" type="text/css" href="style.css?6891">
+    <link rel="stylesheet" type="text/css" href="./css/animate.css?8272">
+    <link rel="stylesheet" type="text/css" href="./css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Handia - Accueil</title>
+
+
+
+    <!-- Analytics -->
+    <style>
+        /* Style pour le texte qui déclenche l'affichage du paragraphe */
+        
+        .trigger-text {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        /* Style pour le paragraphe à afficher */
+        
+        .hidden-paragraph {
+            display: none;
+        }
+    </style>
+    <!-- Analytics END -->
+
+</head>
+
+<body>
+
+    <!-- Début chatbox -->
+
+    <script>
+        var fontSettings = {
+            fontSize: 16,
+            fontFamily: "Arial"
+        };
+
+        function increaseFontSize(settings) {
+            settings.fontSize += 2;
+            document.body.style.fontSize = settings.fontSize + "px";
+        }
+
+        function decreaseFontSize(settings) {
+            settings.fontSize -= 2;
+            document.body.style.fontSize = settings.fontSize + "px";
+        }
+
+        function changeFontFamily(newFont) {
+            fontSettings.fontFamily = newFont;
+            document.body.style.fontFamily = fontSettings.fontFamily;
+        }
+
+        function changeToDyslexicFont() {
+            var elements = document.getElementsByTagName("*");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.fontFamily = "OpenDyslexic-Regular";
+            }
+        }
+
+        function changeToNormalFont() {
+            var elements = document.getElementsByTagName("*");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.fontFamily = "Arial";
+            }
+        }
+
+        function toggleGrayscale() {
+            var elements = document.body.getElementsByTagName("*");
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].style.filter === "saturate(0%)") {
+                    elements[i].style.filter = "none";
+                } else {
+                    elements[i].style.filter = "saturate(0%)";
+                }
+            }
+
+            var body = document.getElementsByTagName("body")[0];
+            if (body.style.backgroundColor === "") {
+                body.style.backgroundColor = "#6F777D";
+                body.style.color = "#E6E6E6";
+            } else {
+                body.style.backgroundColor = "";
+                body.style.color = "";
+            }
+        }
+
+        function readText() {
+            var text = "";
+            var elements = document.getElementsByTagName("*");
+            for (var i = 0; i < elements.length; i++) {
+                text += elements[i].innerText + " ";
+            }
+            var speech = new SpeechSynthesisUtterance();
+            speech.text = text;
+            speechSynthesis.speak(speech);
+        }
+    </script>
+
+    <style>
+        /* Style pour l'icône de chat */
+        
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 75px;
+            height: 75px;
+            background-color: #3F2A56;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px #999;
+            cursor: pointer;
+            z-index: 2;
+        }
+        /* Style pour la boîte de chat */
+        
+        .chatbox {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 9999;
+            width: 350px;
+            height: 400px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            display: none;
+        }
+        /* Style pour les onglets */
+        
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ffffff;
+            background-color: #3F2A56;
+            color: white;
+        }
+        
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+            color: white;
+        }
+        
+        .tab button:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+        
+        .tab button.active {
+            background-color: #ffffff;
+            color: black;
+        }
+        /* Style pour le contenu de la boîte de chat */
+        
+        .chat-content {
+            padding: 20px;
+            height: 320px;
+            overflow-y: auto;
+        }
+        /* Style pour le formulaire de chat */
+        
+        .chat-form {
+            padding: 20px;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+
+
+
+
+    <button class="chat-icon" onclick="toggleChatbox()">
+            AIDE
+        </button>
+
+
+    <div class="chatbox" id="chatbox">
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'page1')" id="defaultOpen">Boutons Web</button>
+            <button class="tablinks" onclick="openTab(event, 'page3')">Aide demande</button>
+        </div>
+
+        <div id="page1" class="tabcontent">
+            <div class="chat-content">
+                <!-- contenu de la page 1 -->
+
+                <div class="tete" style="text-align: center; padding-top: 1%;padding-bottom: 1%;">
+
+                    <div class="btn-group" role="group" style="width: 100%;">
+                        <button class="btn btn-outline" style="border: solid;" onclick="decreaseFontSize(fontSettings)" style="font-size: 70%;border: none;">A-</button>
+                        <button class="btn btn-outline" style="border: solid;" onclick="document.body.style.fontSize = '16px'; fontSettings.fontSize = 16" style="border: none;">Normal</button>
+                        <button class="btn btn-outline" style="border: solid;" onclick="increaseFontSize(fontSettings)" style="border: none;">A+</button>
+                    </div>
+                    <br><br>
+                    <div class="btn-group" role="group" style="width: 100%;">
+                        <button class="btn btn-outline" style="border: solid;" onclick="changeToDyslexicFont()" style="border: none;">Mode Dyslexic</button>
+                        <button class="btn btn-outline" style="border: solid;" onclick="changeToNormalFont()" style="border: none;">Mode Classic</button>
+                    </div>
+                    <br><br>
+                    <button class="btn btn-outline" style="border: solid;width: 100%;" onclick="toggleGrayscale()" style="border: none;">Activer le mode noir et blanc</button>
+                    <br><br>
+                    <button class="btn btn-outline" style="border: solid;width: 100%;" onclick="readText()">Lire la page</button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="page3" class="tabcontent">
+            <div class="chat-content">
+                <!-- contenu de la page 3 -->
+                <ol>
+                    <li>
+                        <h4>Faire la demande</h4>
+                        <p>Rendez-vous sur le site de la catho en cliquant sur l'onglet "demande" ou via ce bouton :</p>
+                        <a href="https://mah.univ-catholille.fr/" class="btn btn-d btn-lg" style="background-color: #F06B41; width: 70%; height: 30px; display: flex; align-items: center; justify-content: center;">Lien</a>
+                        <br>
+
+                    </li>
+                    <li>
+                        <h4>Médecin universitaire</h4>
+                        <p>Une fois avoir complété le document avec vos information personnel, un mail vous est envoyé avec le contacte du médecin universitaire. <br><br> Le rendez-vous peut se faire par téléphone/visio. Lors de l’entretien, Vous lui apporterez
+                            votre dossier médical. Prévoyez votre carte vitale + un moyen de paiement pour la consultation. </p>
+                    </li>
+                    <li>
+                        <h4>Et après</h4>
+                        <p>Une fois avoir été validé, les préconisations sont envoyées à l’école et un référent vous est attribuer (David Marsault). </p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleChatbox() {
+            var chatbox = document.getElementById("chatbox");
+            if (chatbox.style.display === "block") {
+                chatbox.style.display = "none";
+            } else {
+                chatbox.style.display = "block";
+            }
+        }
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        document.getElementById("defaultOpen").click();
+        // Script pour afficher/cacher la chatbox et le formulaire
+        const chatboxToggle = document.querySelector('.chatbox-toggle');
+        const chatbox = document.querySelector('.chatbox');
+        const form = document.querySelector('form');
+
+        chatboxToggle.addEventListener('click', () => {
+            chatbox.classList.toggle('show');
+            form.classList.toggle('show');
+        });
+    </script>
+
+    <!-- fin chatbox -->
+
+
+
+    <!-- Preloader -->
+    <div id="page-loading-blocs-notifaction" class="page-preloader-active">
+
+        <div class="stage">
+            <div class="wrapper">
+                <div class="slash"></div>
+                <div class="sides">
+                    <div class="side"></div>
+                    <div class="side"></div>
+                    <div class="side"></div>
+                    <div class="side"></div>
+                </div>
+                <div class="text">
+                    <div class="text--backing">HANDIA</div>
+                    <div class="text--left">
+                        <div class="inner">HANDIA</div>
+                    </div>
+                    <div class="text--right">
+                        <div class="inner">HANDIA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Preloader END -->
+
+
+    <!-- Main container -->
+    <div class="page-container">
+
+        <!-- bloc-0 -->
+        <div class="bloc l-bloc " id="bloc-0">
+            <div class="container bloc-sm">
+                <div class="row">
+                    <div class="col">
+                        <nav class="navbar navbar-light row navbar-expand-md" role="navigation">
+                            <div class="container-fluid ">
+                                <a class="navbar-brand" href="/index.html">
+                                    <picture>
+                                        <source type="image/webp" srcset="img/logoici.webp"><img src="img/logoici.png" alt="logo" class="me-2" width="45" height="45"></picture>Handia</a>
+                                <button id="nav-toggle" type="button" class="ui-navbar-toggler navbar-toggler border-0 p-0 ms-auto" aria-expanded="false" aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target=".navbar-6869">
+							<span class="navbar-toggler-icon"><svg height="32" viewBox="0 0 32 32" width="32"><path class="svg-menu-icon" d="m2 9h28m-28 7h28m-28 7h28"></path></svg></span>
+						</button>
+                                <div class="collapse navbar-collapse navbar-6869">
+                                    <ul class="site-navigation nav navbar-nav ms-auto">
+                                        <li class="nav-item active">
+                                            <a href="index.html" class="a-btn nav-link">Accueil</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="https://mah.univ-catholille.fr/" class="a-btn nav-link">Demande</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="./sensibilisation/index.html" class="a-btn nav-link">Sensibilisation</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="./temoignage/index.html" class="a-btn nav-link">Témoignage</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-0 END -->
+
+        <!-- bloc-1 -->
+        <div class="bloc l-bloc full-width-bloc" id="bloc-1">
+            <div class="container bloc-no-padding">
+                <div class="row">
+                    <div class="order-md-0 col-md-12 col-lg-6 order-lg-1 offset-lg-1">
+                        <picture>
+                            <source type="image/webp" srcset="img/lazyload-ph.png" data-srcset="/img/image001.png"><img src="img/lazyload-ph.png" data-src="/img/image001.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" width="1089" height="762"></picture>
+                    </div>
+                    <div class="align-self-center offset-md-1 col-md-10 col-lg-4 col-sm-10 offset-sm-1 col-10 offset-1">
+                        <h2 class="mg-md" style="color: #3F2A56 ;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                            Un engagement pour l'Accessibilité
+                        </h2>
+                        <h3 class="mg-md" style="color: #3F2A56 ;">
+
+                        </h3>
+                        <p>
+                            Bienvenue sur notre site dédié à l'information sur l'accueil des personnes handicapées dans notre école ! Que vous soyez une personne en situation de handicap qui souhaite rejoindre notre établissement, ou simplement quelqu'un qui souhaite en savoir plus
+                            sur l'inclusion et la sensibilisation envers les personnes handicapées, vous êtes au bon endroit. Nous sommes là pour vous fournir les informations nécessaires et répondre à vos questions sur notre approche inclusive et les
+                            ressources disponibles pour soutenir les élèves handicapés dans notre école.
+
+                        </p><a href="#david" class="btn btn-d btn-lg" style="background-color: #F06B41;">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-1 END -->
+
+        <!-- ScrollToTop Button -->
+        <button aria-label="Scroll to top button" class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"><path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/></svg></button>
+        <!-- ScrollToTop Button END-->
+
+
+        <!-- bloc-11 -->
+        <div class="bloc l-bloc" id="bloc-11">
+            <div class="container bloc-lg">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-8 col-12">
+                        <!-- Changement ici -->
+                        <div class="card" style="background-color: #3F2A56 ; color: white;border-radius: 10%;" id="david">
+                            <div class="card-body team-card">
+                                <picture>
+                                    <source type="image/webp" srcset="img/lazyload-ph.png" data-srcset="img/david.webp">
+                                    <img src="img/lazyload-ph.png" data-src="img/david.png" class="rounded-circle mx-auto d-block mt-5 lazyload" width="100" alt="david" height="100" style="background-color: white;"></picture>
+                                <h3 class="text-center mg-sm">
+                                    David MARSEAULT
+                                </h3>
+                                <h5 class="text-center mg-md">
+                                    Référent handicap principal Junia
+                                </h5>
+                                <div class="row justify-content-center">
+                                    <div class="col-4">
+                                        <!-- Changement ici -->
+                                        <div class="text-center">
+                                            <a href="https://blocsapp.com/"><span class="fa fa-facebook-official icon-md"></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <!-- Changement ici -->
+                                        <div class="social-link-bric">
+                                            <a href="https://www.linkedin.com/in/david-marseault-junia/?originalSubdomain=fr" class="twitter-link" target="_blank">
+                                                <img width="24" height="24" src="/img/linkedin-svgrepo-com (2).svg"></img>
+                                            </a>
+                                            <a href="mailto:david.marseault@junia.com" class="facebook-link" target="_blank">
+                                                <img width="24" height="24" src="/img/mail-svgrepo-com (1).svg"></img>
+                                            </a>
+                                            <a href="tel:0361762368" class="instagram-link" target="_blank">
+                                                <img width="24" height="24" src="/img/phone-svgrepo-com.svg"></img>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-11 END -->
+
+
+        <!-- bloc-12 -->
+        <div class="bloc l-bloc" id="bloc-12" style="background-color: rgba(78, 43, 109, 0.2);">
+            <div class="container bloc-lg">
+
+                <div class="row">
+                    <div class="col">
+                        <h3 class="mg-md text-center" style="color: #f06a41;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: 60px;font-weight: 900;">
+                            Evénements<br>
+                        </h3>
+                        <p class="text-center" style="color: #f06a4188;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                            Les événements du moment dans la région
+                        </p>
+                    </div>
+                </div>
+
+                <div class="container" id="Evénements">
+                    <div class="card-column column-0">
+                        <div class="card card-color-0">
+                            <div class="border"></div>
+                            <img src="/img/Capture d’écran 2023-03-12 à 17.16.20.png" />
+                            <h1>Automatic Lille Europe <br> <br><br></h1>
+                        </div>
+                        <div class="card card-color-2">
+                            <div class="border"></div>
+                            <img src="img/testevenement.png" />
+                            <h1>Tous en rose <br><br><br></h1>
+                        </div>
+                    </div>
+                    <div class="card-column column-1">
+                        <div class="card card-color-1">
+                            <div class="border"></div><img src="/img/Capture d’écran 2023-03-12 à 18.10.42.png" />
+                            <h1>Semaines <br> « Handicap et Citoyenneté » <br><br></h1>
+                        </div>
+                        <div class="card card-color-2">
+                            <div class="border"></div><img src="/img/Capture d’écran 2023-03-12 à 18.20.50.png" />
+                            <h1>La nuit du handicap.<br><br></h1>
+                        </div>
+                    </div>
+                    <div class="card-column column-2">
+                        <div class="card card-color-1">
+                            <div class="border"></div><img src="/img/Capture d’écran 2023-03-12 à 18.19.11.png" />
+                            <h1>Journée internationale des personnes handicapées.</h1>
+                        </div>
+                        <div class="card card-color-2">
+                            <div class="border"></div><img src="/img/Capture d’écran 2023-03-12 à 18.19.57.png" />
+                            <h1>La Journée mondiale du handicap.</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cover" class="cover"></div>
+
+        <div id="open-content" class="open-content">
+            <a href="#Evénements" id="close-content" class="close-content"><span class="x-1"></span><span class="x-2"></span></a>
+            <img id="open-content-image" src="" />
+            <div class="text" id="open-content-text">
+            </div>
+        </div>
+        <!-- bloc-12 END -->
+
+
+
+
+
+
+        <!-- bloc-7 -->
+        <div class="bloc l-bloc" id="bloc-7">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col-md-6">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.618285751983!2d3.0465717154618495!3d50.6342074819885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sJunia%20ISEN%20Lille!5e0!3m2!1sfr!2sfr!4v1678643883215!5m2!1sfr!2sfr"
+                            width="558" height="391" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="col-md-6 align-self-center">
+                        <h2 class="mg-md" style="color: #3F2A56;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                            Accessibilité
+                        </h2>
+                        <h3 class="mg-md" style="color: #3F2A56;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                            Dans le bâtiment JUNIA ISEN
+                        </h3>
+                        <p>
+                            41 Bd Vauban : Accessibilité pour tous. Ramps, ascenseurs, toilettes adaptées, salles de classe accessibles et documents pédagogiques en formats accessibles. Engagement en faveur d'un environnement inclusif pour tous les étudiants, quel que soit leur
+                            niveau d'aptitude
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-7 END -->
+
+        <!-- bloc-8 -->
+        <div class="bloc l-bloc" id="bloc-8" style="background-color: rgba(78, 43, 109, 0.2);">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col-md-6 order-md-1">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.644030057173!2d3.0429153154618542!3d50.633729282023054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d579573550df%3A0xaa9c89af983f58e9!2sJunia%20HEI!5e0!3m2!1sfr!2sfr!4v1678643911426!5m2!1sfr!2sfr"
+                            width="558" height="391" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="col-md-6 align-self-center">
+                        <h2 class="mg-md" style="color: #3F2A56;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                            Accessibilité
+                        </h2>
+                        <h3 class="mg-md" style="color: #3F2A56;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                            Dans le bâtiment JUNIA HEI
+                        </h3>
+                        <p>
+                            13 Rue de Toul : Accessibilité pour tous. Ramps, ascenseurs, toilettes adaptées, salles de classe accessibles et documents pédagogiques en formats accessibles. Engagement en faveur d'un environnement inclusif pour tous les étudiants, quel que soit leur
+                            niveau d'aptitude
+                        </p><a href="https://www.pictoaccess.fr/brands/junia" class="btn btn-d btn-lg" style="border: solid;border-color: #F06B41;background-color: white;color: #F06B41;">Pictoaccess</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-8 END -->
+
+        <!-- bloc-7 -->
+        <div class="bloc l-bloc" id="bloc-7">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col-md-6">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.6357232042205!2d3.0445359154618603!3d50.63388358201201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d5793a85fd35%3A0x8aee0dd6549dd29c!2sJUNIA%20ISA!5e0!3m2!1sfr!2sfr!4v1678643926875!5m2!1sfr!2sfr"
+                            width="558" height="391" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="col-md-6 align-self-center">
+                        <h2 class="mg-md" style="color: #3F2A56;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                            Accessibilité
+                        </h2>
+                        <h3 class="mg-md" style="color: #3F2A56;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                            Dans le bâtiment JUNIA ISA
+                        </h3>
+                        <p>
+                            2 Rue Norbert Segard : Accessibilité pour tous. Ramps, ascenseurs, toilettes adaptées, salles de classe accessibles et documents pédagogiques en formats accessibles. Engagement en faveur d'un environnement inclusif pour tous les étudiants, quel que soit
+                            leur niveau d'aptitude
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-7 END -->
+
+        <div class="bar">
+            <span class="bar_content">
+              NOS PARTENAIRES
+            </span>
+        </div>
+
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 custom-our-team">
+                    <div class="our-team">
+                        <div class="picture">
+                            <img class="img-fluid" src="/img/logo-handinamique-bonne-taille-.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Propose une bourse d’études à des entreprises sociales pour l'habitat (ESH)</h3>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href=" https://www.handinamique.org/ ">En savoir plus sur handinamique</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 custom-our-team">
+                    <div class="our-team">
+                        <div class="picture">
+                            <img class="img-fluid" src="/img/cropped-LOGO-PNG-SITE_Plan-de-travail-1.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Propose de former les étudiants au Label Handimanagement </h3>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.companieros.com/">En savoir plus sur companieros</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- bloc-13 -->
+        <div class="bloc l-bloc" id="bloc-13" style="background-color: #3F2A56; color: white;">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <h4 class="mg-md text-center text-sm-start">
+                            A Propos
+                        </h4><a href="https://junia.com/" class="a-btn a-block footer-link" style="color:white;">Junia</a><a href="./" class="a-btn a-block footer-link" style="color:white;">Contact Us</a>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h4 class="mg-md text-center text-sm-start">
+                            Lien Facile
+                        </h4><a href="https://mah.univ-catholille.fr/" class="a-btn a-block footer-link" style="color:white;">Faire une Demande</a><a href="./" class="a-btn a-block footer-link" style="color:white;">Touscap'</a>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h4 class="mg-md text-center text-sm-start">
+                            Nous Suivre
+                        </h4><a href="./" class="a-btn a-block footer-link" style="color:white;">Twitter</a><a href="./" class="a-btn a-block footer-link" style="color:white;">Facebook</a>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h4 class="mg-md text-center text-sm-start">
+                            Contacter
+                        </h4>
+                        <div class="row">
+                            <div class="col-6 col-sm-2 col offset-sm-0">
+                                <div class="text-center">
+                                    <a href="https://blocsapp.com/"><span style="color:white;" class="fab fa-facebook-f icon-md"></span></a>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-2">
+                                <div class="text-center">
+                                    <a href="https://blocsapp.com/"><span style="color:white;" class="fab fa-twitter icon-md"></span></a>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-2">
+                                <div class="text-center">
+                                    <a href="https://www.instagram.com/handia_junia/"><span style="color:white;" class="fab fa-instagram icon-md"></span></a>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-2">
+                                <div class="text-center">
+                                    <a href="mailto:handia.junia@gmail.com"><span style="color:white;" class="far fa-envelope icon-md"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-13 END -->
+
+    </div>
+    <!-- Main container END -->
+
+
+
+    <!-- Additional JS -->
+    <script src="./js/bootstrap.bundle.js?8523"></script>
+    <script src="./js/blocs.js?8511"></script>
+    <script src="./js/lazysizes.min.js" defer></script>
+    <script src="/js/script.js"></script>
+    <!-- Additional JS END -->
+
+    <script>
+        // Récupération de tous les textes déclencheurs et des paragraphes à afficher
+        const triggerTexts = document.querySelectorAll('.trigger-text');
+        const hiddenParagraphs = document.querySelectorAll('.hidden-paragraph');
+
+        // Ajout d'un événement au clic sur chaque texte déclencheur
+        for (let i = 0; i < triggerTexts.length; i++) {
+            triggerTexts[i].addEventListener('click', function() {
+                // Affichage ou masquage du paragraphe correspondant en fonction de son état actuel
+                if (hiddenParagraphs[i].style.display === 'none') {
+                    hiddenParagraphs[i].style.display = 'block';
+                } else {
+                    hiddenParagraphs[i].style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
