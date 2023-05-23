@@ -212,12 +212,12 @@ var listAudio = [{
     },
     {
         name: "En quoi consiste votre rôle ?",
-        file: "../audio/En quoi consiste votre rôle -.mp4",
+        file: "audio/role.mp4",
         duration: "00:25"
     },
     {
         name: "Pourquoi être coordinatrice ULIS au lycée",
-        file: "../audio/Pourquoi être coordinatrice ULIS au lycée -.mp4",
+        file: "audio/ulis.mp4",
         duration: "00:21"
     },
     {
@@ -227,7 +227,7 @@ var listAudio = [{
     },
     {
         name: "Que pensez vous de la mise en avant du handicap ?",
-        file: "../audio/Que pensez vous de la mise en avant du handicap -.mp4",
+        file: "audio/handicap.mp4",
         duration: "00:12"
     },
 ]
