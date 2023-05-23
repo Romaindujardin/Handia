@@ -1,0 +1,1466 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" type="image/png" href="../img/logoici.png">
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css?5713">
+    <link rel="stylesheet" type="text/css" href="../style.css?6891">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css?8272">
+    <link rel="stylesheet" type="text/css" href="../css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+    <title>Handia - Sensibilisation</title>
+
+
+
+    <!-- Analytics -->
+
+    <!-- Analytics END -->
+
+</head>
+
+<!-- Début chatbox -->
+
+<script>
+    var fontSettings = {
+        fontSize: 16,
+        fontFamily: "Arial"
+    };
+
+    function increaseFontSize(settings) {
+        settings.fontSize += 2;
+        document.body.style.fontSize = settings.fontSize + "px";
+    }
+
+    function decreaseFontSize(settings) {
+        settings.fontSize -= 2;
+        document.body.style.fontSize = settings.fontSize + "px";
+    }
+
+    function changeFontFamily(newFont) {
+        fontSettings.fontFamily = newFont;
+        document.body.style.fontFamily = fontSettings.fontFamily;
+    }
+
+    function changeToDyslexicFont() {
+        var elements = document.getElementsByTagName("*");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.fontFamily = "OpenDyslexic-Regular";
+        }
+    }
+
+    function changeToNormalFont() {
+        var elements = document.getElementsByTagName("*");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.fontFamily = "Arial";
+        }
+    }
+
+    function toggleGrayscale() {
+        var elements = document.body.getElementsByTagName("*");
+        for (var i = 0; i < elements.length; i++) {
+            if (elements[i].style.filter === "saturate(0%)") {
+                elements[i].style.filter = "none";
+            } else {
+                elements[i].style.filter = "saturate(0%)";
+            }
+        }
+
+        var body = document.getElementsByTagName("body")[0];
+        if (body.style.backgroundColor === "") {
+            body.style.backgroundColor = "#6F777D";
+            body.style.color = "#E6E6E6";
+        } else {
+            body.style.backgroundColor = "";
+            body.style.color = "";
+        }
+    }
+
+    function readText() {
+        var text = "";
+        var elements = document.getElementsByTagName("*");
+        for (var i = 0; i < elements.length; i++) {
+            text += elements[i].innerText + " ";
+        }
+        var speech = new SpeechSynthesisUtterance();
+        speech.text = text;
+        speechSynthesis.speak(speech);
+    }
+</script>
+
+<style>
+    /* Style pour l'icône de chat */
+    
+    .chat-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 75px;
+        height: 75px;
+        background-color: #3F2A56;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px #999;
+        cursor: pointer;
+        z-index: 2;
+    }
+    /* Style pour la boîte de chat */
+    
+    .chatbox {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        z-index: 9999;
+        width: 350px;
+        height: 400px;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+        display: none;
+    }
+    /* Style pour les onglets */
+    
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ffffff;
+        background-color: #3F2A56;
+        color: white;
+    }
+    
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+        color: white;
+    }
+    
+    .tab button:hover {
+        background-color: #ffffff;
+        color: black;
+    }
+    
+    .tab button.active {
+        background-color: #ffffff;
+        color: black;
+    }
+    /* Style pour le contenu de la boîte de chat */
+    
+    .chat-content {
+        padding: 20px;
+        height: 320px;
+        overflow-y: auto;
+    }
+    /* Style pour le formulaire de chat */
+    
+    .chat-form {
+        padding: 20px;
+        border-top: 1px solid #ccc;
+    }
+</style>
+
+
+
+
+<button class="chat-icon" onclick="toggleChatbox()">
+        AIDE
+    </button>
+
+
+<div class="chatbox" id="chatbox">
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'page1')" id="defaultOpen">Boutons Web</button>
+        <button class="tablinks" onclick="openTab(event, 'page3')">Aide demande</button>
+    </div>
+
+    <div id="page1" class="tabcontent">
+        <div class="chat-content">
+            <!-- contenu de la page 1 -->
+
+            <div class="tete" style="text-align: center; padding-top: 1%;padding-bottom: 1%;">
+
+                <div class="btn-group" role="group" style="width: 100%;">
+                    <button class="btn btn-outline" style="border: solid;" onclick="decreaseFontSize(fontSettings)" style="font-size: 70%;border: none;">A-</button>
+                    <button class="btn btn-outline" style="border: solid;" onclick="document.body.style.fontSize = '16px'; fontSettings.fontSize = 16" style="border: none;">Normal</button>
+                    <button class="btn btn-outline" style="border: solid;" onclick="increaseFontSize(fontSettings)" style="border: none;">A+</button>
+                </div>
+                <br><br>
+                <div class="btn-group" role="group" style="width: 100%;">
+                    <button class="btn btn-outline" style="border: solid;" onclick="changeToDyslexicFont()" style="border: none;">Mode Dyslexic</button>
+                    <button class="btn btn-outline" style="border: solid;" onclick="changeToNormalFont()" style="border: none;">Mode Classic</button>
+                </div>
+                <br><br>
+                <button class="btn btn-outline" style="border: solid;width: 100%;" onclick="toggleGrayscale()" style="border: none;">Activer le mode noir et blanc</button>
+                <br><br>
+                <button class="btn btn-outline" style="border: solid;width: 100%;" onclick="readText()">Lire la page</button>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="page3" class="tabcontent">
+        <div class="chat-content">
+            <!-- contenu de la page 3 -->
+            <ol>
+                <li>
+                    <h4>Faire la demande</h4>
+                    <p>Rendez-vous sur le site de la catho en cliquant sur l'onglet "demande" ou via ce bouton :</p>
+                    <a href="https://mah.univ-catholille.fr/" class="btn btn-d btn-lg" style="background-color: #F06B41; width: 70%; height: 30px; display: flex; align-items: center; justify-content: center;">Lien</a>
+                    <br>
+
+                </li>
+                <li>
+                    <h4>Médecin universitaire</h4>
+                    <p>Une fois avoir complété le document avec vos information personnel, un mail vous est envoyé avec le contacte du médecin universitaire. <br><br> Le rendez-vous peut se faire par téléphone/visio. Lors de l’entretien, Vous lui apporterez
+                        votre dossier médical. Prévoyez votre carte vitale + un moyen de paiement pour la consultation. </p>
+                </li>
+                <li>
+                    <h4>Et après</h4>
+                    <p>Une fois avoir été validé, les préconisations sont envoyées à l’école et un référent vous est attribuer (David Marsault). </p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleChatbox() {
+        var chatbox = document.getElementById("chatbox");
+        if (chatbox.style.display === "block") {
+            chatbox.style.display = "none";
+        } else {
+            chatbox.style.display = "block";
+        }
+    }
+
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("defaultOpen").click();
+    // Script pour afficher/cacher la chatbox et le formulaire
+    const chatboxToggle = document.querySelector('.chatbox-toggle');
+    const chatbox = document.querySelector('.chatbox');
+    const form = document.querySelector('form');
+
+    chatboxToggle.addEventListener('click', () => {
+        chatbox.classList.toggle('show');
+        form.classList.toggle('show');
+    });
+</script>
+
+<!-- fin chatbox -->
+
+
+<body data-clean-url="true"></body>
+
+
+
+
+
+<!-- Preloader -->
+<div id="page-loading-blocs-notifaction" class="page-preloader"></div>
+<!-- Preloader END -->
+
+
+<!-- Main container -->
+<div class="page-container">
+
+    <!-- bloc-0 -->
+    <div class="bloc l-bloc " id="bloc-0">
+        <div class="container bloc-sm">
+            <div class="row">
+                <div class="col">
+                    <nav class="navbar navbar-light row navbar-expand-md" role="navigation">
+                        <div class="container-fluid ">
+                            <a class="navbar-brand" href="../index.html">
+                                <picture>
+                                    <source type="image/webp" srcset="../img/logoici.webp"><img src="../img/logoici.png" alt="logo" class="me-2" width="45" height="45"></picture>Handia</a>
+                            <button id="nav-toggle" type="button" class="ui-navbar-toggler navbar-toggler border-0 p-0 ms-auto" aria-expanded="false" aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target=".navbar-6869">
+							<span class="navbar-toggler-icon"><svg height="32" viewBox="0 0 32 32" width="32"><path class="svg-menu-icon" d="m2 9h28m-28 7h28m-28 7h28"></path></svg></span>
+						</button>
+                            <div class="collapse navbar-collapse navbar-6869">
+                                <ul class="site-navigation nav navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="../index.html" class="a-btn nav-link">Accueil</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://mah.univ-catholille.fr/" class="a-btn nav-link">Demande</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a href="../sensibilisation/index.html" class="a-btn nav-link">Sensibilisation</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="../temoignage/index.html" class="a-btn nav-link">Témoignage</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bloc-0 END -->
+
+    <style>
+        #root {
+            display: block;
+        }
+        
+        #restepage {
+            display: none;
+        }
+        
+        #bouton-valider {
+            display: block;
+        }
+    </style>
+
+    <div id="root" style="text-align: center;"></div>
+
+
+    <div id="restepage">
+
+        <!-- bloc-2 -->
+        <div class="bloc l-bloc" id="bloc-2">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 text-center">
+                        <picture>
+                            <source type="image/webp" srcset="img/lazyload-ph.png" data-srcset="../img/Deficients-auditifs-CMJN-10x10-cm.jpg"><img src="img/lazyload-ph.png" data-src="../img/Deficients-auditifs-CMJN-10x10-cm.jpg" class="rounded-circle mx-auto d-block mt-5 lazyload" width="auto" alt="david" height="auto" style="background-color: white;"></picture>
+
+                        <h3 class="mg-md" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                            Handicap Auditif
+                        </h3>
+                        <p>
+                            Les personnes atteintes de handicap auditif peuvent avoir des difficultés à entendre les sons, à comprendre la parole ou à communiquer avec les autres. Les causes du handicap auditif peuvent inclure des problèmes génétiques, des infections, des lésions
+                            ou des expositions à des bruits forts ou prolongés.
+
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center">
+                        <picture>
+                            <source type="image/webp" srcset="img/lazyload-ph.png" data-srcset="../img/Deficients-mentaux-CMJN.jpg"><img src="img/lazyload-ph.png" data-src="../img/Deficients-mentaux-CMJN.jpg" class="rounded-circle mx-auto d-block mt-5 lazyload" width="auto" alt="david" height="auto" style="background-color: white;"></picture>
+                        <h3 class="mg-md" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                            Handicap Psychique
+                        </h3>
+                        <p>
+                            Altération de la perception de la réalité entrainant un déficit relationnel, des difficultés de concentration… La personne garde des facultés intellectuelles dites « normales » c’est la possibilité de les utiliser qui est déficiente.
+
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center">
+                        <picture>
+                            <source type="image/webp" srcset="img/lazyload-ph.png" data-srcset="../img/handicap_psychique_blanc.png"><img src="img/lazyload-ph.png" data-src="../img/handicap_psychique_blanc.png" class="rounded-circle mx-auto d-block mt-5 lazyload" width="200" alt="david" height="200" style="background-color: white;"></picture>
+                        <h3 class="mg-md" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                            Handicap Mental
+                        </h3>
+                        <p>
+                            Conséquence d'une déficience intellectuelle. La personne en situation de handicap mental éprouve des difficultés plus ou moins importantes de réflexion, de conceptualisation, de communication et de décision.
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center">
+                        <picture>
+                            <source type="image/webp" srcset="img/lazyload-ph.png" data-srcset="../img/Deficients-moteur-CMJN.jpg"><img src="img/lazyload-ph.png" data-src="../img/Deficients-moteur-CMJN.jpg" class="rounded-circle mx-auto d-block mt-5 lazyload" width="auto" alt="david" height="auto" style="background-color: white;"></picture>
+                        <h3 class="mg-md" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                            Handicap Invalidant
+                        </h3>
+                        <p>
+                            Certaines maladies (sclérose en plaques. cancer, VIH, diabète, hyperthyroïdie, etc.) entraînent des déficiences ou des contraintes plus ou moins importantes qui peuvent être momentanées, permanentes ou évolutives.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
+                            <div class="text-center">
+                                <picture>
+                                    <source type="image/webp" srcset="img/lazyload-ph.png" data-srcset="../img/Deficients-visuels-CMJN.jpg">
+                                    <img src="img/lazyload-ph.png" data-src="../img/Deficients-visuels-CMJN.jpg" class="rounded-circle mx-auto d-block mt-5 lazyload" width="auto" alt="david" height="auto" style="background-color: white;">
+                                </picture>
+                                <h3 class="mg-md" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Handicap Visuelle
+                                </h3>
+                                <p>
+                                    Le handicap visuel fait référence à une altération partielle ou totale de la vision, ce qui entraîne des difficultés ou une incapacité à percevoir ou à interpréter les informations visuelles de manière normale. Les personnes atteintes de handicap visuel
+                                    peuvent avoir une acuité visuelle réduite, une vision tunnel, une cécité nocturne ou une perte de champ visuel.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
+                            <div class="text-center">
+                                <picture>
+                                    <source type="image/webp" srcset="img/lazyload-ph.png" data-srcset="../img/maladie-invalidante.png">
+                                    <img src="img/lazyload-ph.png" data-src="../img/maladie-invalidante.png" class="rounded-circle mx-auto d-block mt-5 lazyload" width="200" alt="david" height="200" style="background-color: white;color: black;">
+                                </picture>
+                                <h3 class="mg-md" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Handicap Cognitif
+                                </h3>
+                                <p>
+                                    Le handicap cognitif est une condition qui se caractérise par des limitations dans les fonctions mentales, telles que la mémoire, l'apprentissage, la compréhension, la résolution de problèmes et la prise de décision.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- bloc-2 END -->
+
+        <!-- bloc-3 -->
+        <div class="bloc l-bloc" id="bloc-3">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="mg-md text-center" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: 45px;">
+                            HANDICAP AUDITIF<br>
+                        </h2>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row voffset">
+                            <div class="col order-1">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Perte auditive légère
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Difficulté à entendre les sons faibles ou les voix à distance, surtout dans un environnement bruyant.
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-1">
+                                <div class="text-center">
+                                    <span class="fa bi-ear-fill icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row voffset">
+                            <div class="col order-2">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Surdité de transmission
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Problème de transmission du son de l'oreille externe à l'oreille interne.
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="text-center">
+                                    <span class="fa bi-ear-fill icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row voffset">
+                            <div class="col order-2">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Surdité de perception
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Difficulté à comprendre ou interpréter les sons, même si la transmission est normale.
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="text-center">
+                                    <span class="fa bi-ear-fill icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi-ear-fill icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Acouphènes
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            Perception de bruits ou de sons dans les oreilles ou dans la tête sans stimulus sonore externe.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi-ear-fill icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Syndrome de Usher
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            Perte auditive combinée à une maladie oculaire progressive appelée rétinite pigmentaire.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi-ear-fill icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Surdité profonde
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            Perte auditive totale, incapacité à entendre les sons, même les plus forts.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-3 END -->
+
+
+
+        <!-- bloc-4 -->
+        <div class="bloc l-bloc" id="bloc-4">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="mg-md text-center" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: 45px;">
+                            HANDICAP PSYCHIQUES <br>
+                        </h2>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row voffset">
+                            <div class="col order-1">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Trouble dépressif majeur
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Un trouble de l'humeur caractérisé par une tristesse profonde, une perte d'intérêt pour les activités, des changements de poids et de sommeil, ainsi que des pensées suicidaires.
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-1">
+                                <div class="text-center">
+                                    <span class="fa bi-activity icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row voffset">
+                            <div class="col order-2">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Trouble anxieux généralisé
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Une condition caractérisée par une anxiété excessive et persistante, accompagnée de symptômes tels que l'inquiétude constante, la tension musculaire, les troubles du sommeil et les difficultés de concentration. <br><br>
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="text-center">
+                                    <span class="fa bi-activity icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row voffset">
+                            <div class="col order-2">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Schizophrénie
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Un trouble psychotique chronique qui altère la perception, la pensée et le comportement. Les symptômes peuvent inclure des hallucinations, des délires, des troubles de la pensée et une diminution de la capacité à fonctionner normalement.
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="text-center">
+                                    <span class="fa bi-activity icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi-activity icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Trouble bipolaire </h4>
+                                        <p class="text-center text-lg-start">
+                                            Trouble caractérisé par des changements d'humeur extrêmes, incluant dépression et manie/hypomanie. Les personnes concernées connaissent des phases d'énergie, irritabilité, impulsivité et sommeil réduit.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi-activity icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Trouble du spectre autistique
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            Trouble neuro-développemental qui altère communication, interactions sociales et comportement. Les personnes du spectre autistique ont des difficultés de communication, des comportements répétitifs et des intérêts restreints. </p>
+                                    </div>
+                                </div>
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi-activity icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Trouble de stress post-traumatique (TSPT)
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            Trouble post-traumatique se développant après un événement traumatisant. Symptômes : cauchemars, flashbacks, évitement des stimuli liés au traumatisme et anxiété élevée. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-4 END -->
+
+        <!-- bloc-5 -->
+        <div class="bloc l-bloc" id="bloc-5">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="mg-md text-center" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: 45px;">
+                            HANDICAP MENTAUX <br>
+                        </h2>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row voffset">
+                            <div class="col order-1">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Retard mental
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Un handicap mental caractérisé par un développement intellectuel significativement inférieur à la moyenne, entraînant des limitations dans les capacités intellectuelles et adaptatives.
+
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-1">
+                                <div class="text-center">
+                                    <span class="fa bi bi-person icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row voffset">
+                            <div class="col order-2">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Troubles du spectre de l'autisme
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Troubles neuro-développementaux affectent communication, interactions sociales et comportement. Personnes sur spectre autistique ont difficultés dans ces domaines et comportements restreints et répétitifs.
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="text-center">
+                                    <span class="fa bi bi-person icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row voffset">
+                            <div class="col order-2">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Troubles de l'apprentissage
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Troubles impactant acquisition, rétention et utilisation de compétences académiques telles que lecture, écriture et mathématiques. Peut entraîner des difficultés scolaires significatives.
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="text-center">
+                                    <span class="fa bi bi-person icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi bi-person icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Trouble bipolaire
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            changements extrêmes d'humeur (dépression, manie/hypomanie). Difficultés dans gestion émotions, relations et performances académiques ou professionnelles. </div>
+                                </div>
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi bi-person icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Troubles de l'humeur
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            Troubles mentaux affectant l'humeur et les émotions, incluant dépression majeure, trouble bipolaire et trouble dysthymique. Caractérisés par épisodes dépressifs ou fluctuations de l'humeur. </p>
+                                    </div>
+                                </div>
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi bi-person icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Troubles de l'anxiété
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            Troubles caractérisés par anxiété excessive et persistante, impactant la vie quotidienne. Incluent trouble d'anxiété généralisée, trouble panique et phobies spécifiques. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-5 END -->
+
+        <!-- bloc-5 -->
+        <div class="bloc l-bloc" id="bloc-5">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="mg-md text-center" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: 45px;">
+                            HANDICAP INVALIDANT<br>
+                        </h2>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row voffset">
+                            <div class="col order-1">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    La sclérose en plaques
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Système immunitaire se mettant a attaquer la myéline (la membrane qui permet un bonne connexion nerveuse)
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-1">
+                                <div class="text-center">
+                                    <span class="fa bi-person-slash icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row voffset">
+                            <div class="col order-2">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Le sida
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Dernière phase du VIH, lorsque l'immunodéficience est acquise pouvant entainer la mort jusqu’à la mort de la personne
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="text-center">
+                                    <span class="fa bi-person-slash icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row voffset">
+                            <div class="col order-2">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Le diabète
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Maladies liés au pancréas qui, soit ne produit plus d’insuline, soit ne l’utilise pas correctement créant donc des problèmes sur la égulation de la glycémie.
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="text-center">
+                                    <span class="fa bi-person-slash icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi-person-slash icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            L’hypertension artérielle
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            augmentation anormale de la pression du sang sur la paroi des artères
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi-person-slash icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            le cancer
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            Maladie provoquée par la transformation de cellules qui deviennent anormales et prolifèrent de façon excessive dans l’organisme
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi-person-slash icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            L’épilepsie
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            Trouble visuel pouvant causer des crises d’épilepsie c’est-à-dire une manifestations physiques transitoires qui résultent de décharges électriques brusques et excessives d' influx nerveux dans le cerveau.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-5 END -->
+
+        <!-- bloc-5 -->
+        <div class="bloc l-bloc" id="bloc-5">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="mg-md text-center" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: 45px;">
+                            HANDICAP VISUEL<br>
+                        </h2>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row voffset">
+                            <div class="col order-1">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Cataracte
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Une opacification du cristallin de l'œil, ce qui entraîne une vision floue ou trouble. Les personnes atteintes de cataracte peuvent avoir une vision altérée et des difficultés à voir clairement les objets.
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-1">
+                                <div class="text-center">
+                                    <style>
+                                        .hidden1 {
+                                            display: none;
+                                            transition: transform 0.2s;
+                                        }
+                                        
+                                        .hidden1.hover {
+                                            transform: scale(1.5);
+                                        }
+                                        
+                                        .round-button {
+                                            width: 100px;
+                                            height: 100px;
+                                            border-radius: 50%;
+                                            background-color: #535353;
+                                            color: #ffffff;
+                                            font-size: 16px;
+                                            font-weight: bold;
+                                            text-align: center;
+                                            line-height: 100px;
+                                            cursor: pointer;
+                                        }
+                                        
+                                        .fullscreen {
+                                            position: fixed;
+                                            top: 0;
+                                            left: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            z-index: 9999;
+                                        }
+                                    </style>
+                                    <script>
+                                        function toggleImage1() {
+                                            var image = document.getElementById("monImage1");
+                                            image.classList.toggle("hidden1");
+                                            image.onclick = function() {
+                                                this.classList.toggle("fullscreen");
+                                            };
+
+                                        }
+                                    </script>
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <div class="round-button fa" onclick="toggleImage1()">Exemple</div>
+                                        </div>
+                                    </div>
+
+                                    <img id="monImage1" class="hidden1" src="../img/Capture d’écran 2023-05-12 à 11.05.27.png" width="100%" height="100%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row voffset">
+                            <div class="col order-2">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Glaucome
+                                </h4>
+                                <p class="text-center text-lg-end">
+
+                                    Une maladie qui endommage progressivement le nerf optique, généralement en raison d'une augmentation de la pression à l'intérieur de l'œil. Cela peut entraîner une perte de vision périphérique et, à un stade avancé, une perte de vision centrale.
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="text-center">
+                                    <style>
+                                        .hidden2 {
+                                            display: none;
+                                        }
+                                        
+                                        .round-button {
+                                            width: 100px;
+                                            height: 100px;
+                                            border-radius: 50%;
+                                            background-color: #535353;
+                                            color: #ffffff;
+                                            font-size: 16px;
+                                            font-weight: bold;
+                                            text-align: center;
+                                            line-height: 100px;
+                                            cursor: pointer;
+                                        }
+                                        
+                                        .fullscreen {
+                                            position: fixed;
+                                            top: 0;
+                                            left: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            z-index: 9999;
+                                        }
+                                    </style>
+                                    <script>
+                                        function toggleImage2() {
+                                            var image = document.getElementById("monImage2");
+                                            image.classList.toggle("hidden2");
+                                            image.onclick = function() {
+                                                this.classList.toggle("fullscreen");
+                                            };
+                                        }
+                                    </script>
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <div class="round-button fa" onclick="toggleImage2()">Exemple</div>
+                                        </div>
+                                    </div>
+
+                                    <img id="monImage2" class="hidden2" src="../img/Capture d’écran 2023-05-12 à 11.37.15.png" width="100%" height="100%">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row voffset">
+                            <div class="col order-2">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Rétinopathie diabétique
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Une complication du diabète qui affecte la rétine, le tissu sensible à la lumière à l'arrière de l'œil. La rétinopathie diabétique peut entraîner une vision floue, une vision altérée et, dans les cas graves, une perte de vision. </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="text-center">
+                                    <span class="fa bi bi-eye-slash-fill icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <style>
+                                                .hidden3 {
+                                                    display: none;
+                                                }
+                                                
+                                                .round-button {
+                                                    width: 100px;
+                                                    height: 100px;
+                                                    border-radius: 50%;
+                                                    background-color: #535353;
+                                                    color: #ffffff;
+                                                    font-size: 16px;
+                                                    font-weight: bold;
+                                                    text-align: center;
+                                                    line-height: 100px;
+                                                    cursor: pointer;
+                                                }
+                                                
+                                                .fullscreen {
+                                                    position: fixed;
+                                                    top: 0;
+                                                    left: 0;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    z-index: 9999;
+                                                }
+                                            </style>
+                                            <script>
+                                                function toggleImage3() {
+                                                    var image = document.getElementById("monImage3");
+                                                    image.classList.toggle("hidden3");
+                                                    image.onclick = function() {
+                                                        this.classList.toggle("fullscreen");
+                                                    };
+                                                }
+                                            </script>
+                                            <div class="col-lg-3">
+                                                <div class="text-center">
+                                                    <div class="round-button fa" onclick="toggleImage3()">Exemple</div>
+                                                </div>
+                                            </div>
+
+                                            <img id="monImage3" class="hidden3" src="../img/Capture d’écran 2023-05-12 à 11.41.40.png" width="100%" height="100%">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Astigmate
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            Un défaut de la courbure de la cornée, ce qui entraîne une vision floue à toutes les distances. Les personnes atteintes d'astigmatisme peuvent avoir une vision déformée ou distordue.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <style>
+                                                .hidden4 {
+                                                    display: none;
+                                                }
+                                                
+                                                .round-button {
+                                                    width: 100px;
+                                                    height: 100px;
+                                                    border-radius: 50%;
+                                                    background-color: #535353;
+                                                    color: #ffffff;
+                                                    font-size: 16px;
+                                                    font-weight: bold;
+                                                    text-align: center;
+                                                    line-height: 100px;
+                                                    cursor: pointer;
+                                                }
+                                                
+                                                .fullscreen {
+                                                    position: fixed;
+                                                    top: 0;
+                                                    left: 0;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    z-index: 9999;
+                                                }
+                                                
+                                                .fullscreen {
+                                                    position: fixed;
+                                                    top: 0;
+                                                    left: 0;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    z-index: 9999;
+                                                }
+                                            </style>
+                                            <script>
+                                                function toggleImage4() {
+                                                    var image = document.getElementById("monImage4");
+                                                    image.classList.toggle("hidden4");
+                                                    image.onclick = function() {
+                                                        this.classList.toggle("fullscreen");
+                                                    };
+                                                }
+                                            </script>
+
+                                            <div class="col-lg-3">
+                                                <div class="text-center">
+                                                    <div class="round-button fa" onclick="toggleImage4()">Exemple</div>
+                                                </div>
+                                            </div>
+                                            <img id="monImage4" class="hidden4" src="../img/Capture d’écran 2023-05-12 à 11.39.25.png" width="100%" height="100%">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Les névrites optiques
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            L'inflammation du nerf optique, qui peut être causée par des troubles auto-immuns, des infections ou d'autres facteurs. Les névrites optiques peuvent entraîner une vision floue, une diminution de la vision des couleurs et une douleur oculaire.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi bi-eye-slash-fill icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Aveugle
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            Une personne considérée comme aveugle a une perte totale de la vision ou une acuité visuelle très limitée. Cela peut être dû à des anomalies congénitales, des maladies oculaires graves ou des blessures. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- bloc-5 END -->
+
+        <!-- bloc-5 -->
+        <div class="bloc l-bloc" id="bloc-5">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="mg-md text-center" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: 45px;">
+                            HANDICAP COGNITIF <br>
+                        </h2>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row voffset">
+                            <div class="col order-1">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Dyslexie
+                                </h4>
+                                <p class="text-center text-lg-end" id="text-container">
+                                    La dyslexie est un trouble qui perturbe la lecture, la compréhension et l'écriture. Elle affecte l'orthographe, la grammaire et la syntaxe, rendant ces compétences plus difficiles pour ceux qui en sont atteints.  </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-1">
+                                <div class="text-center">
+                                    <style>
+                                        .hidden2 {
+                                            display: none;
+                                        }
+                                        
+                                        .round-button {
+                                            width: 100px;
+                                            height: 100px;
+                                            border-radius: 50%;
+                                            background-color: #535353;
+                                            color: #ffffff;
+                                            font-size: 16px;
+                                            font-weight: bold;
+                                            text-align: center;
+                                            line-height: 100px;
+                                            cursor: pointer;
+                                        }
+                                        
+                                        .fullscreen {
+                                            position: fixed;
+                                            top: 0;
+                                            left: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            z-index: 9999;
+                                        }
+                                    </style>
+                                    <script>
+        var originalText = "";
+        var dyslexiaActive = false;
+        var intervalId;
+
+        window.onload = function() {
+            var textContainer = document.getElementById("text-container");
+            originalText = textContainer.innerText;
+        };
+
+        function toggleDyslexia() {
+            var textContainer = document.getElementById("text-container");
+            dyslexiaActive = !dyslexiaActive;
+
+            if (dyslexiaActive) {
+                intervalId = setInterval(function() {
+                    startDyslexia(textContainer);
+                }, 500);
+            } else {
+                clearInterval(intervalId);
+                textContainer.innerText = originalText;
+            }
+        }
+
+        function startDyslexia(textContainer) {
+            var text = textContainer.innerText;
+            var words = text.split(" ");
+            var newText = "";
+
+            for (var i = 0; i < words.length; i++) {
+                if (words[i].length > 2) {
+                    var firstLetter = words[i].charAt(0);
+                    var lastLetter = words[i].charAt(words[i].length - 1);
+                    var middleLetters = words[i].substring(1, words[i].length - 1);
+                    var shuffledLetters = shuffleString(middleLetters);
+                    var shuffledWord = firstLetter + shuffledLetters + lastLetter;
+                    newText += shuffledWord + " ";
+                } else {
+                    newText += words[i] + " ";
+                }
+            }
+
+            textContainer.innerText = newText.trim();
+        }
+
+        function shuffleString(string) {
+            var a = string.split(""),
+                n = a.length;
+
+            for (var i = n - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var tmp = a[i];
+                a[i] = a[j];
+                a[j] = tmp;
+            }
+
+            return a.join("");
+        }
+    </script>
+                                    <div class="col-lg-3">
+                                                <div class="text-center">
+                                                    <div class="round-button fa" id="dyslexia-button" onclick="toggleDyslexia()">Exemple</div>
+                                                </div>
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row voffset">
+                            <div class="col order-2">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Troubles du spectre de l'autisme :
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Des troubles neuro-développementaux qui affectent la communication, les interactions sociales et le comportement. Les personnes atteintes du spectre de l'autisme peuvent présenter des difficultés dans ces domaines et avoir des intérêts et des comportements
+                                    restreints et répétitifs.
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="text-center">
+                                    <span class="fa bi-file-medical-fill icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row voffset">
+                            <div class="col order-2">
+                                <h4 class="text-center mg-sm text-lg-end" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                    Troubles de l'apprentissage
+                                </h4>
+                                <p class="text-center text-lg-end">
+                                    Des troubles qui affectent la capacité d'une personne à acquérir, à retenir ou à utiliser certaines compétences académiques, telles que la lecture, l'écriture ou les mathématiques. Cela peut entraîner des difficultés scolaires
+                                </p>
+                            </div>
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="text-center">
+                                    <span class="fa bi-file-medical-fill icon-round icon-md"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi-file-medical-fill icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Syndrome de Down
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            Une condition génétique causée par la présence d'un chromosome supplémentaire 21, qui entraîne un retard mental, des traits du visage caractéristiques et des problèmes de santé associés. </p>
+                                    </div>
+                                </div>
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi-file-medical-fill icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Troubles de l'attention et de l'hyperactivité (TDAH)
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            Des troubles neurologiques caractérisés par des problèmes de concentration, d'impulsivité et d'hyperactivité. Les personnes atteintes de TDAH peuvent avoir du mal à se concentrer, à s'organiser et à contrôler leur comportement. </p>
+                                    </div>
+                                </div>
+                                <div class="row voffset">
+                                    <div class="col-lg-3">
+                                        <div class="text-center">
+                                            <span class="fa bi-file-medical-fill icon-round icon-md"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-center mg-sm text-lg-start" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                                            Troubles cognitifs liés au vieillissement
+                                        </h4>
+                                        <p class="text-center text-lg-start">
+                                            Des changements cognitifs liés à l'âge qui peuvent affecter la mémoire, l'attention, le raisonnement et les fonctions exécutives. Ces troubles peuvent être liés à des conditions telles que la maladie d'Alzheimer ou la démence vasculaire. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-5 END -->
+
+        <!-- ScrollToTop Button -->
+        <button aria-label="Scroll to top button" class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"><path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/></svg></button>
+        <!-- ScrollToTop Button END-->
+
+
+
+        <!-- bloc-13 -->
+        <div class="bloc l-bloc" id="bloc-13" style="background-color: #3F2A56; color: white;">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <h4 class="mg-md text-center text-sm-start">
+                            About
+                        </h4><a href="./" class="a-btn a-block footer-link" style="color:white;">The Team</a><a href="./" class="a-btn a-block footer-link" style="color:white;">Contact Us</a>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h4 class="mg-md text-center text-sm-start">
+                            Get the app
+                        </h4><a href="./" class="a-btn a-block footer-link" style="color:white;">Android</a><a href="./" class="a-btn a-block footer-link" style="color:white;">iOS</a>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h4 class="mg-md text-center text-sm-start">
+                            Follow Us
+                        </h4><a href="./" class="a-btn a-block footer-link" style="color:white;">Twitter</a><a href="./" class="a-btn a-block footer-link" style="color:white;">Facebook</a>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h4 class="mg-md text-center text-sm-start">
+                            Connect
+                        </h4>
+                        <div class="row">
+                            <div class="col-6 col-sm-2 col offset-sm-0">
+                                <div class="text-center">
+                                    <a href="https://blocsapp.com/"><span style="color:white;" class="fab fa-facebook-f icon-md"></span></a>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-2">
+                                <div class="text-center">
+                                    <a href="https://blocsapp.com/"><span style="color:white;" class="fab fa-twitter icon-md"></span></a>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-2">
+                                <div class="text-center">
+                                    <a href="https://blocsapp.com/"><span style="color:white;" class="fab fa-instagram icon-md"></span></a>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-2">
+                                <div class="text-center">
+                                    <a href="https://blocsapp.com/"><span style="color:white;" class="far fa-envelope icon-md"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-13 END -->
+
+    </div>
+</div>
+<!-- Main container END -->
+
+<script>
+    function afficherPageSuivante() {
+        // Masquer le quizz
+        document.getElementById("root").style.display = "none";
+        // Afficher le reste de la page
+        document.getElementById("restepage").style.display = "block";
+        // Masquer le bouton
+        document.getElementById("bouton-valider").style.display = "none";
+    }
+</script>
+
+<!-- Additional JS -->
+<script src="../js/bootstrap.bundle.js?8523"></script>
+<script src="../js/blocs.js?8511"></script>
+<script src="../js/lazysizes.min.js" defer></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.development.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.development.js'></script>
+<script src="./script.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.development.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.development.js'></script>
+<script src="/sensibilisation/scriptquizz.js"></script>
+<!-- Additional JS END -->
+
+
+</body>
+
+</html>
