@@ -202,12 +202,12 @@ var listAudio = [{
     },
     {
         name: "Progrès classe ULIS ",
-        file: "audio/progresulis.mp4",
+        file: "/audio/progresulis.mp4",
         duration: "00:27"
     },
     {
         name: "Combien de temps êtes vous avec vos élèves ?",
-        file: "audio/tempsaveceleves.mp4",
+        file: ".../audio/tempsaveceleves.mp4",
         duration: "00:12"
     },
     {
