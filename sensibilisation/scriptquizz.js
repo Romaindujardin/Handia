@@ -126,7 +126,7 @@ function Answers(props) {
 function ScoreDisplay(props) {
     return /*#__PURE__*/ (
         React.createElement("h3", null,
-            props.name, " Réponse : ", /*#__PURE__*/ React.createElement("span", { className: props.color }, props.score)));
+            props.name, " Réponses : ", /*#__PURE__*/ React.createElement("span", { className: props.color }, props.score)));
 
 
 }
@@ -158,8 +158,8 @@ class Quizz extends React.Component {
         //show the question and answers only if we did not reach the end, the restart button otherwise, the score is always displayed
         return /*#__PURE__*/ (
             React.createElement("div", null, !end && /*#__PURE__*/ React.createElement(Question, { question: this.props.data[this.state.index].question }), !end && /*#__PURE__*/ React.createElement(Answers, { options: this.props.data[this.state.index].options, handleClick: this.handleClick }), /*#__PURE__*/
-                React.createElement(ScoreDisplay, { name: "Bonne", score: this.state.correct, color: "Bonne" }), /*#__PURE__*/
-                React.createElement(ScoreDisplay, { name: "Mauvaise", score: this.state.incorrect, color: "Mauvaise" }),
+                React.createElement(ScoreDisplay, { name: "Bonnes", score: this.state.correct, color: "Bonnes" }), /*#__PURE__*/
+                React.createElement(ScoreDisplay, { name: "Mauvaises", score: this.state.incorrect, color: "Mauvaises" }),
                 end && (
                     /*#__PURE__*/
                     React.createElement("div", null,
