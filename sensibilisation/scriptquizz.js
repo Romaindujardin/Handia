@@ -32,9 +32,9 @@ var quizzData = [{
     {
         question: "Quelle est l'une des différences entre la dyslexie et la dysorthographie ?",
         options: [
-            "La difficultés d'apprentissage de la lecture",
-            "La difficultés d'apprentissage de l'expression écrite",
-            "La difficultés d'apprentissage de l'écriture",
+            "La difficulté d'apprentissage de la lecture",
+            "La difficulté d'apprentissage de l'expression écrite",
+            "La difficulté d'apprentissage de l'écriture",
             "aucune de ces réponses"
         ],
 
