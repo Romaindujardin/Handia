@@ -1,0 +1,548 @@
+/*-----------------------------------------------------------------------------------
+	Handia
+	Author: Romain Dujardin
+	Version: 1.0
+-----------------------------------------------------------------------------------*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #FFFFFF;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* = NavBar
+-------------------------------------------------------------- */
+
+.navbar {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+
+/* Navbar Icon */
+
+.svg-menu-icon {
+    fill: none;
+    stroke: rgba(0, 0, 0, 0.5);
+    stroke-width: 2px;
+    fill-rule: evenodd;
+}
+
+.navbar-dark .svg-menu-icon {
+    stroke: rgba(255, 255, 255, 0.5);
+}
+
+.menu-icon-thin-bars {
+    stroke-width: 1px;
+}
+
+.menu-icon-thick-bars {
+    stroke-width: 5px;
+}
+
+.menu-icon-rounded-bars {
+    stroke-width: 3px;
+    stroke-linecap: round;
+}
+
+.menu-icon-filled {
+    fill: rgba(0, 0, 0, 0.5);
+    stroke-width: 0px;
+}
+
+.navbar-dark .menu-icon-filled {
+    fill: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+    background: none!important;
+    pointer-events: none;
+    width: 33px;
+    height: 33px;
+}
+
+
+/* NavBar Active Link */
+
+.navbar-nav .nav-item.active>.nav-link {
+    background-color: #3F2A56;
+    color: white;
+}
+
+
+/* NavBar Hover Link */
+
+.navbar-nav .nav-item>.nav-link:hover {
+    background-color: #3F2A56;
+    color: white;
+    opacity: 0.2;
+}
+
+
+/* Handle Multi Level Navigation */
+
+.dropdown-menu .dropdown-menu {
+    border: none
+}
+
+@media (min-width:576px) {
+    .navbar-expand-sm .dropdown-menu .dropdown-menu {
+        border: 1px solid rgba(0, 0, 0, .15);
+        position: absolute;
+        left: 100%;
+        top: -7px
+    }
+    .navbar-expand-sm .dropdown-menu .submenu-left {
+        right: 100%;
+        left: auto
+    }
+}
+
+@media (min-width:768px) {
+    .navbar-expand-md .dropdown-menu .dropdown-menu {
+        border: 1px solid rgba(0, 0, 0, .15);
+        border: 1px solid rgba(0, 0, 0, .15);
+        position: absolute;
+        left: 100%;
+        top: -7px
+    }
+    .navbar-expand-md .dropdown-menu .submenu-left {
+        right: 100%;
+        left: auto
+    }
+}
+
+@media (min-width:992px) {
+    .navbar-expand-lg .dropdown-menu .dropdown-menu {
+        border: 1px solid rgba(0, 0, 0, .15);
+        position: absolute;
+        left: 100%;
+        top: -7px
+    }
+    .navbar-expand-lg .dropdown-menu .submenu-left {
+        right: 100%;
+        left: auto
+    }
+}
+
+
+/* = Custom Styling
+-------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+.btn,
+a {
+    font-family: "Helvetica";
+}
+
+.container {
+    max-width: 1140px;
+}
+
+.navbar-brand img {
+    width: 45px;
+    height: 45px;
+}
+
+.team-card {
+    min-height: 350px;
+}
+
+.img-style {
+    height: 170px;
+}
+
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px');
+
+/* Main Styles */
+
+body {
+    color: #fff;
+}
+
+.container {
+    height: 200px;
+    width: 90%;
+}
+
+#quote-box {
+    margin: 0;
+    padding: 1rem 1.5rem;
+    position: relative;
+    text-align: center;
+}
+
+#quote-box:before {
+    content: "\201C";
+    font-family: 'Slabo 27px', serif;
+    font-size: 20rem;
+    height: 20%;
+    left: 0;
+    line-height: 1;
+    opacity: .3;
+    position: absolute;
+    top: -2rem;
+    width: 20%;
+}
+
+#quote-box p.quote {
+    font-family: 'Slabo 27px', serif;
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    margin-top: 0;
+}
+
+#quote-box p.source {
+    font-weight: 200;
+}
+
+#quote-box p.source,
+p.span {
+    text-align: right;
+}
+
+#quote-box p.source:before {
+    content: '- ';
+}
+
+#quote-box p span {
+    display: block;
+    font-size: .9rem;
+    font-style: italic;
+}
+
+#loadQuote {
+    background-color: rgba(0, 0, 68, 0.2);
+    border: 2px solid #fff;
+    bottom: 10%;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    left: 30%;
+    letter-spacing: .4rem;
+    padding: 1rem 0;
+    position: absolute;
+    text-transform: uppercase;
+    transform: translateX(-50%);
+    width: 20%;
+}
+
+#loadQuote:hover {
+    border-color: rgba(66, 39, 106, 0.6);
+    color: black;
+    background-color: white;
+}
+
+#loadQuote:focus {
+    outline: none;
+}
+
+#loadQuote2 {
+    background-color: rgba(0, 0, 68, 0.2);
+    border: 2px solid #fff;
+    bottom: 10%;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    left: 50%;
+    letter-spacing: .4rem;
+    padding: 1rem 0;
+    position: absolute;
+    text-transform: uppercase;
+    transform: translateX(-50%);
+    width: 20%;
+}
+
+#loadQuote2:hover {
+    border-color: rgba(66, 39, 106, 0.6);
+    color: black;
+    background-color: white;
+}
+
+#loadQuote2:focus {
+    outline: none;
+}
+
+#loadQuote3 {
+    background-color: rgba(0, 0, 68, 0.2);
+    border: 2px solid #fff;
+    bottom: 10%;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    left: 70%;
+    letter-spacing: .4rem;
+    padding: 1rem 0;
+    position: absolute;
+    text-transform: uppercase;
+    transform: translateX(-50%);
+    width: 20%;
+}
+
+#loadQuote3:hover {
+    border-color: rgba(66, 39, 106, 0.6);
+    color: black;
+    background-color: white;
+}
+
+#loadQuote3:focus {
+    outline: none;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 100%;
+    }
+    #quote-box {
+        padding: 2rem 4rem;
+    }
+    #quote-box p.quote {
+        font-size: 3rem;
+    }
+}
+
+.bloc-lg {
+    padding: 100px 20px;
+}
+
+.bloc-sm {
+    padding: 20px;
+}
+
+#myProgress {
+    width: 420px;
+    background-color: #d9d9f2;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#myBar {
+    width: 0%;
+    height: 5px;
+    background-color: #F06B41;
+    border-radius: 10px;
+}
+
+.logo {
+    fill: red;
+}
+
+.btn-action {
+    cursor: pointer;
+    padding-top: 10px;
+    width: 30px;
+}
+
+.btn-ctn,
+.infos-ctn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infos-ctn {
+    padding-top: 20px;
+}
+
+.btn-ctn>div {
+    padding: 5px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.infos-ctn>div {
+    margin-bottom: 8px;
+    color: #F06B41;
+}
+
+.first-btn {
+    margin-left: 3px;
+}
+
+.duration {
+    margin-left: 10px;
+}
+
+.title {
+    margin-left: 10px;
+    width: 210px;
+    text-align: center;
+}
+
+.player-ctn {
+    border-radius: 15px;
+    width: 420px;
+    padding: 10px;
+    background-color: #464646;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.playlist-track-ctn {
+    display: flex;
+    background-color: #464646;
+    margin-top: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.playlist-track-ctn:last-child {
+    /*border: 1px solid #F06B41; */
+}
+
+.playlist-track-ctn>div {
+    margin: 10px;
+}
+
+.playlist-info-track {
+    width: 80%;
+}
+
+.playlist-info-track,
+.playlist-duration {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: #F06B41;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.playlist-ctn {
+    padding-bottom: 20px;
+}
+
+.active-track {
+    background: #4d4d4d;
+    color: #F06B41 !important;
+    font-weight: bold;
+}
+
+.active-track>.playlist-info-track,
+.active-track>.playlist-duration,
+.active-track>.playlist-btn-play {
+    color: #F06B41 !important;
+}
+
+.playlist-btn-play {
+    pointer-events: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.fas {
+    color: #F06B41;
+    font-size: 20px;
+}
+
+.bloc1 {
+    background-color: white;
+}
+
+
+/* = Icons
+-------------------------------------------------------------- */
+
+.icon-md {
+    font-size: 30px!important;
+}
+
+.icon-round {
+    margin: 0 auto;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    padding: 32px 30px 26px 30px;
+    min-width: 80px;
+}
+
+.icon-round.icon-md,
+.icon-square.icon-md,
+.icon-rounded.icon-md {
+    min-width: 92px;
+}
+
+.icon-round.icon-lg,
+.icon-square.icon-lg,
+.icon-rounded.icon-lg {
+    min-width: 122px;
+}
+
+.icon-round.icon-xl,
+.icon-square.icon-xl,
+.icon-rounded.icon-xl {
+    min-width: 162px;
+}
+
+
+/* = Bric adjustment margins
+-------------------------------------------------------------- */
+
+.mg-sm {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.mg-md {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* = Buttons
+-------------------------------------------------------------- */
+
+.btn-d,
+.btn-d:hover,
+.btn-d:focus {
+    color: #FFF;
+    background: rgba(0, 0, 0, .3);
+}
+
+
+/* Prevent ugly blue glow on chrome and safari */
+
+button {
+    outline: none!important;
+}
+
+.btn-wire {
+    background: transparent!important;
+    border: 2px solid transparent;
+}
+
+.btn-wire:hover {
+    background: transparent!important;
+    border: 2px solid transparent;
+}
+
+.a-block {
+    width: 100%;
+    text-align: left;
+    display: inline-block;
+}
+
+.text-center .a-block {
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
