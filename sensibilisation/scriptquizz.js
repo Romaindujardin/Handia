@@ -58,7 +58,7 @@ var quizzData = [{
     },
 
     {
-        question: "Quel est le pourcentage de personnes avec un handicap cognitif ?",
+        question: "Quel est le pourcentage d'handicap cognitif ?",
         options: [
             "8%",
             "45%",
@@ -70,7 +70,7 @@ var quizzData = [{
     },
 
     {
-        question: "Quel est le pourcentage de personnes avec un handicap psychique ?",
+        question: "Quel est le pourcentage d'handicap psychique ?",
         options: [
             "12,6%",
             "27,4%",
