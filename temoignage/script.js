@@ -192,42 +192,42 @@ function createTrackItem(index, name, duration) {
 
 var listAudio = [{
         name: "Après le collège ULIS",
-        file: "./audio/collègeULIS.mp4",
+        file: "./collègeULIS.mp4",
         duration: "00:12"
     },
     {
         name: "Ils trouveront leur voix ",
-        file: "./audio/voix.mp4",
+        file: "./voix.mp4",
         duration: "00:06"
     },
     {
         name: "Progrès classe ULIS ",
-        file: "./audio/progresulis.mp4",
+        file: "./progresulis.mp4",
         duration: "00:27"
     },
     {
         name: "Combien de temps êtes vous avec vos élèves ?",
-        file: "./audio/tempsaveceleves.mp4",
+        file: "./tempsaveceleves.mp4",
         duration: "00:12"
     },
     {
         name: "En quoi consiste votre rôle ?",
-        file: "./audio/role.mp4",
+        file: "./role.mp4",
         duration: "00:25"
     },
     {
         name: "Pourquoi être coordinatrice ULIS au lycée",
-        file: "./audio/ulis.mp4",
+        file: "./ulis.mp4",
         duration: "00:21"
     },
     {
         name: "Qu'est ce que votre métier vous apporte ?",
-        file: "./audio/metier.mp4",
+        file: "./metier.mp4",
         duration: "00:22"
     },
     {
         name: "Que pensez vous de la mise en avant du handicap ?",
-        file: "./audio/handicap.mp4",
+        file: "./handicap.mp4",
         duration: "00:12"
     },
 ]
